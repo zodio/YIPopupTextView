@@ -625,6 +625,8 @@ typedef enum {
     if (_maxCount > 0 && textCount > _maxCount) {
         _acceptButton.enabled = NO;
         _countLabel.textColor = [UIColor redColor];
+        self.text = [self.text substringToIndex:_maxCount];
+        [self updateCount];
     } else {
         _acceptButton.enabled = YES;
         _countLabel.textColor = [UIColor lightGrayColor];
