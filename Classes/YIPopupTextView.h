@@ -67,6 +67,7 @@ typedef NS_ENUM(NSInteger, YIPopupTextViewButtonStyle) {
 - (void)showInViewController:(UIViewController*)viewController;     // automatically adjusts top/bottomUIBarMargin for iOS7
 
 - (void)dismiss;
+- (void)cancel;
 
 @end
 

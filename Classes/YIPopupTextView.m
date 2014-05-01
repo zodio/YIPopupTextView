@@ -438,6 +438,10 @@ typedef enum {
     [self dismissWithCancelled:NO];
 }
 
+- (void)cancel {
+    [self dismissWithCancelled:YES];
+}
+
 - (void)dismissWithCancelled:(BOOL)cancelled
 {
     // stop observing before resignFirstResponder, for not to adjust frame while dismissing
