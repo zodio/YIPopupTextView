@@ -369,6 +369,10 @@ typedef enum {
 
 - (void)showInView:(UIView*)view
 {
+    if ([self.delegate respondsToSelector:@selector(popupTextViewWillAppear:)]) {
+        [self.delegate popupTextViewWillAppear:self];
+    }
+    
     _shouldAnimate = YES;
     
     // TODO: show in window + orientation handling
@@ -411,6 +415,10 @@ typedef enum {
     [self _changePopupViewFrameWithNotification:nil];
     
     [self becomeFirstResponder];
+    
+    if ([self.delegate respondsToSelector:@selector(popupTextViewDidAppear:)]) {
+        [self.delegate popupTextViewDidAppear:self];
+    }
 }
 
 - (void)showInViewController:(UIViewController*)viewController
